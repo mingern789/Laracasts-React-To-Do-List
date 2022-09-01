@@ -1,22 +1,12 @@
 import React, { useEffect, useState } from "react";
+import useFetch from "../hooks/useFetch";
 
 export default function Reddit() {
-  const [posts, setPosts] = useState([]);
-  const [isLoading, setIsLoading] = useState(true);
-  const [errorMessage, setErrorMessage] = useState(null);
-
-  useEffect(() => {
-    fetch("https://www.reddit.com/r/goodanimemes.json")
-      .then((response) => response.json())
-      .then((results) => {
-        setIsLoading(false);
-        setPosts(results.data.children);
-      })
-      .catch((error) => {
-        setIsLoading(false);
-        setErrorMessage("There was an error");
-      });
-  }, []);
+  const {
+    data: posts,
+    isLoading,
+    errorMessage,
+  } = useFetch("https://www.reddit.com/r/goodanimemes.json");
 
   return (
     <div>
