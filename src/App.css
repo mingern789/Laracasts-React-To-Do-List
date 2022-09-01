@@ -13,8 +13,13 @@ body {
 
 .todo-app-container {
   min-height: 100vh;
-  padding: 10px;
   background: #f3f4f6;
+}
+
+.container {
+  margin: auto;
+  padding-top: 24px;
+  max-width: 48rem;
 }
 
 .todo-app {
@@ -70,7 +75,7 @@ h2 {
   width: 100%;
   border: none;
   box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
-  padding: 8px;
+  padding: 6px 8px;
   font-size: 18px;
 }
 
@@ -136,13 +141,45 @@ h2 {
   border-top: 1px solid lightgray;
 }
 
+.no-todos-container {
+  width: 300px;
+  margin: 30px auto;
+}
+
+.no-todos-container p {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.name-container {
+  margin-bottom: 40px;
+}
+
+.name-label {
+  margin-top: 15px;
+}
+
 .toggles-container {
   margin: 20px 0;
 }
 
-.name-label {
-  margin-bottom: 1rem;
-  margin-top: 1rem;
+nav {
+  background: white;
+  padding: 16px;
+}
+
+nav ul {
+  display: flex;
+  justify-content: center;
+  margin: auto;
+}
+
+nav ul li:not(:first-child) {
+  margin-left: 16px;
+}
+
+.active {
+  font-weight: bold;
 }
 
 /* Transitions  */
